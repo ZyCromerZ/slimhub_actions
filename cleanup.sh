@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-if [[ $OSTYPE != "linux-gnu" ]]; then
-  printf "This Cleanup Script Should Be Run On Ubuntu Runner.\n"
-  exit 1
-fi
+# if [[ $OSTYPE == "linux-gnu" ]]; then
+#   printf "This Cleanup Script Should Be Run On Ubuntu Runner.\n"
+#   exit 1
+# fi
 
 # Make Sure The Environment Is Non-Interactive
 export DEBIAN_FRONTEND=noninteractive
@@ -58,26 +58,26 @@ sudo -EH apt-fast -qq -y purge \
   php-* php5* php7* php8* snmp \
   &>/dev/null
 sudo -EH apt-fast -qq -y autoremove &>/dev/null
-{
-  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100
-  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90
-  sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10 100
-  sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 90
-  sudo update-alternatives --install /usr/bin/cpp cpp /usr/bin/cpp-10 100
-  sudo update-alternatives --install /usr/bin/cpp cpp /usr/bin/cpp-9 90
-  sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-10 100
-  sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-9 90
-  sudo update-alternatives --install /usr/bin/gcov-dump gcov-dump /usr/bin/gcov-dump-10 100
-  sudo update-alternatives --install /usr/bin/gcov-dump gcov-dump /usr/bin/gcov-dump-9 90
-  sudo update-alternatives --install /usr/bin/gcov-tool gcov-tool /usr/bin/gcov-tool-10 100
-  sudo update-alternatives --install /usr/bin/gcov-tool gcov-tool /usr/bin/gcov-tool-9 90
-  sudo update-alternatives --install /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-10 100
-  sudo update-alternatives --install /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-9 90
-  sudo update-alternatives --install /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-10 100
-  sudo update-alternatives --install /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-9 90
-  sudo update-alternatives --install /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-10 100
-  sudo update-alternatives --install /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-9 90
-} &>/dev/null
+# {
+#   sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100
+#   sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90
+#   sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10 100
+#   sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 90
+#   sudo update-alternatives --install /usr/bin/cpp cpp /usr/bin/cpp-10 100
+#   sudo update-alternatives --install /usr/bin/cpp cpp /usr/bin/cpp-9 90
+#   sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-10 100
+#   sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-9 90
+#   sudo update-alternatives --install /usr/bin/gcov-dump gcov-dump /usr/bin/gcov-dump-10 100
+#   sudo update-alternatives --install /usr/bin/gcov-dump gcov-dump /usr/bin/gcov-dump-9 90
+#   sudo update-alternatives --install /usr/bin/gcov-tool gcov-tool /usr/bin/gcov-tool-10 100
+#   sudo update-alternatives --install /usr/bin/gcov-tool gcov-tool /usr/bin/gcov-tool-9 90
+#   sudo update-alternatives --install /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-10 100
+#   sudo update-alternatives --install /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-9 90
+#   sudo update-alternatives --install /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-10 100
+#   sudo update-alternatives --install /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-9 90
+#   sudo update-alternatives --install /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-10 100
+#   sudo update-alternatives --install /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-9 90
+# } &>/dev/null
 echo "::endgroup::"
 
 {
